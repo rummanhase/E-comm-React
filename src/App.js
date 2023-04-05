@@ -3,20 +3,23 @@ import {BrowserRouter, Route , Routes} from 'react-router-dom'
 import NavBar from './component/Nav'
 import Footer from './component/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SignUp from './component/SignUp';
 
 function App() {
   return (
    <>
-   <BrowserRouter>
    <NavBar/>
+   <BrowserRouter>
    <Routes>
-   <Route path='/' element={<h1>Site</h1>}/>
-    <Route path='/home' element={<h1>Home</h1>}/>
-    <Route path='/features' element={<h1>Feature</h1>}/>
-    <Route path='/pricing' element={<h1>Pricing</h1>}/>
+   <Route path='/' element={<h1>Home Products</h1>}/>
+    <Route path='/AddProducts' element={<h1>AddProducts</h1>}/>
+    <Route path='/UpdateProducts' element={<h1>UpdateProducts</h1>}/>
+    <Route path='/Logout' element={<h1>Logout</h1>}/>
+    <Route path='/Profile' element={<h1>Profile</h1>}/>
+    <Route path='/SignUp' element={<SignUp/>}/>
    </Routes>
-   <Footer/>
    </BrowserRouter>
+   <Footer/>
    </>
   );
 }
