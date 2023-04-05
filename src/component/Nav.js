@@ -8,11 +8,14 @@ function NavBar() {
       
       <Navbar bg="primary" variant="dark">
         <Container>
-          <Navbar.Brand href="/">E-Commerce</Navbar.Brand>
+          <Navbar.Brand href="/"> Products</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="home">Home</Nav.Link>
-            <Nav.Link href="features">Features</Nav.Link>
-            <Nav.Link href="pricing">Pricing</Nav.Link>
+            <Nav.Link href="AddProducts">AddProducts</Nav.Link>
+            <Nav.Link href="UpdateProducts">UpdateProducts</Nav.Link>
+            <Nav.Link href="Logout">Logout</Nav.Link>
+            <Nav.Link href="Profile">Profile</Nav.Link>
+            <Nav.Link href="SignUp">SignUp</Nav.Link>
+
           </Nav>
         </Container>
       </Navbar>
