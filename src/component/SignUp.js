@@ -2,8 +2,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../App.css'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
+
+    const navigate = useNavigate();
+
     const [formData , setFormData] = useState({
         name:'',
         email:'',
@@ -17,9 +21,21 @@ function SignUp() {
         }))
     }
 
-    const submitForm =(e)=>{
+    const submitForm =async (e)=>{
         e.preventDefault();
         console.log(formData);
+        let {name , email , password} = formData;
+        let result = await fetch('http://localhost:8005/user' , {
+          method:'post' , 
+          body : JSON.stringify({name , email , password}) , 
+          headers : {
+              'content-type' : 'application/json'
+          }
+        })
+        result = await result.json();
+        localStorage.setItem('user' , JSON.stringify(result))
+        console.log(result)
+        navigate('/')
     }
 
   return (
